@@ -4,7 +4,7 @@ import views
 urlpatterns = {
     '/': views.main_view,
     '/about/': views.about_view,
-    '/products/': views.products_view,
+    '/contact/': views.contact_view,
 }
 
 
