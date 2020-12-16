@@ -4,7 +4,7 @@ import views
 urlpatterns = {
     '/': views.main_view,
     '/about/': views.about_view,
-    '/products/': views.products_view,
+    '/contact/': views.contact_view
 }
 
 
@@ -21,4 +21,3 @@ application = Application(urlpatterns, front_controllers)
 
 # Запуск:
 # gunicorn main:application
-# uwsgi --http :8000 --wsgi-file main.py
