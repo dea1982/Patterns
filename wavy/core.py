@@ -20,8 +20,7 @@ class Application:
     def get_wsgi_input_data(self, env):
         content_length_data = env.get('CONTENT_LENGTH')
         content_length = int(content_length_data) if content_length_data else 0
-        data = env['wsgi.input'].read(
-            content_length) if content_length > 0 else b''
+        data = env['wsgi.input'].read(content_length) if content_length > 0 else b''
         return data
 
     def __init__(self, urlpatterns: dict, front_controllers: list):
