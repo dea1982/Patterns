@@ -1,7 +1,3 @@
-"""
-Работа с шаблонами, паттерн INTERFACE
-Используем шаблонизатор jinja2
-"""
 from jinja2 import Template, FileSystemLoader
 from jinja2.environment import Environment
 
