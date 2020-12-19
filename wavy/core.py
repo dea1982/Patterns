@@ -20,7 +20,8 @@ class Application:
     def get_wsgi_input_data(self, env):
         content_length_data = env.get('CONTENT_LENGTH')
         content_length = int(content_length_data) if content_length_data else 0
-        data = env['wsgi.input'].read(content_length) if content_length > 0 else b''
+        data = env['wsgi.input'].read(
+            content_length) if content_length > 0 else b''
         return data
 
     def __init__(self, urlpatterns: dict, front_controllers: list):
@@ -50,11 +51,11 @@ class Application:
         if path in self.urlpatterns:
             # получаем view по url
             view = self.urlpatterns[path]
-            request = {}
+            request = {
+                'method': method,
+                'data': data,
+                'request_params': request_params}
             # добавляем параметры запросов
-            request['method'] = method
-            request['data'] = data
-            request['request_params'] = request_params
             # добавляем в запрос данные из front controllers
             for controller in self.front_controllers:
                 controller(request)
