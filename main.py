@@ -2,7 +2,6 @@ from wavy import Application, render, DebugApplication, MockApplication
 from models import TrainingSite
 from logging_mod import Logger, debug
 
-
 site = TrainingSite()
 logger = Logger('main')
 
